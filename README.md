@@ -73,7 +73,7 @@ These are associations, not causes.
 
 ## Author
 
-Jason Lou 
-Email: jasonlou622@gmail.com
-LinkedIn: https://www.linkedin.com/in/jason-lou-53844a384
+Jason Lou | 
+Email: jasonlou622@gmail.com | 
+LinkedIn: https://www.linkedin.com/in/jason-lou-53844a384 | 
 GitHub: https://github.com/JasonLou622
