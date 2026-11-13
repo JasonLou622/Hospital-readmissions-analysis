@@ -5,7 +5,7 @@ This project analyzes about 100,000 hospital encounters of patients with diabete
 
 **Goal:** To identify which factors in the data are associated with 30-day readmission, and which are not.
 
-**Headline finding:** The number of earlier inpatient admissions showed the clearest association: the 30-day rate rose from 8.6% with none to 36.3% with seven.
+**Headline finding:** The number of earlier inpatient admissions showed the clearest association: the 30-day rate rose from 8.6% with none to 46.2% with eight.
 
 ## Data
 
@@ -34,16 +34,16 @@ This project analyzes about 100,000 hospital encounters of patients with diabete
 
 ## Methods
 
-- **Tools:** Python, pandas, and SQL (SQLite) in Google Colab. (The SQL `FILTER` clause needs SQLite 3.30 or later.)
+- **Tools:** Python, pandas, and SQLite (Jupyter, VS Code, or Google Colab). (The SQL `FILTER` clause needs SQLite 3.30 or later.)
 - **30-day readmission rate:** the percentage of encounters with `readmitted = '<30'`.
-- **Cleaning decision:** I excluded 2,423 encounters with discharge codes for death or hospice (11, 13, 14, 19, 20, 21), because those patients are not expected to be readmitted. The overall 30-day rate changed from 11.2% to 11.4%, and the conclusions did not change. All findings below use the 99,343 remaining encounters.
+- **Cleaning decision:** I excluded 2,423 encounters with discharge codes for expired or hospice (11, 13, 14, 19, 20, 21), because those patients are not expected to be readmitted. The overall 30-day rate changed from 11.2% to 11.4%, and the conclusions did not change. All findings below use the 99,343 remaining encounters.
 - **Small groups:** groups with very few encounters were excluded from comparisons (at least 100 encounters for earlier admissions, at least 500 for medical specialty), because their rates are unstable.
 
 ## Key Findings
 
 | Factor | Association with 30-day readmission | Evidence |
 |---|---|---|
-| Earlier inpatient admissions | Clearest | 8.6% with none (66,245 encounters) rising to 13.3% with one (18,984), 17.9% with two (7,300), and 46.2% (higest) with eight (145 encounters); 43.1% with nine (109 encounters) is slightly lower. |
+| Earlier inpatient admissions | Clearest | 8.6% with none (66,245 encounters) rising to 13.3% with one (18,984), 17.9% with two (7,300), and 46.2% (highest) with eight (145 encounters); 43.1% with nine (109 encounters) is slightly lower. |
 | Length of hospital stay | Some | Rising from 8.4% at one day to about 14.8% at ten days, then varying between 10.8% and 14.0% at 11 to 14 days. |
 | Medical specialty | Some | Among 16 specialties with at least 500 encounters, rates ranged from 4.8% (Obstetrics and Gynecology) to 16.1% (Nephrology). About half of encounters have no specialty recorded. |
 | Age | Little | Ages 30 and older ranged from 9.8% to 12.6%; ages 20 to 30 were highest (14.3%); under age 10 was lowest (1.9%) but small (160 encounters). |
@@ -68,7 +68,7 @@ These are associations, not causes.
 ## How to Run
 
 1. The two CSV files `diabetic_data.csv` and `IDS_mapping.csv` are included in the folder `diabetic_readmissions_data/` and are also available from the UCI page above (CC BY 4.0).
-2. Open `diabetes_readmission_analysis.ipynb` in Google Colab, upload the two files, and update the file paths if needed.
+2. Open `diabetes_readmission_analysis.ipynb` in Google Colab, upload the two files, and update the file paths if needed. Or run it locally: keep the `diabetic_readmissions_data/` folder next to the notebook.
 3. Choose **Runtime, then Run all**.
 
 ## Author
